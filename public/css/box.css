@@ -1,0 +1,130 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+
+}
+.container
+{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 240px auto;
+    
+}
+.container .box
+{
+    position: relative;
+    width: calc(400px - 30px);
+    height: calc(300px - 30px);
+    background: #000;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px; 
+
+}
+.container .box .icon
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: 0.5s;
+    z-index: 1;
+}
+.container .box:hover .icon
+{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.container .box .icon .fa
+{
+    position: absolute;
+    top: 50;
+    left: 50;
+    transform: translate(-50%,-50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #fff;
+}
+.container .box:hover .icon .fa
+{
+    font-size: 40px;
+}  
+.container .box .content
+{
+    position: absolute;
+    top: 100px;
+    height: calc(100% - 100px);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    opacity: 0;
+    
+}
+.container .box:hover .content
+{
+    top: 100px;
+    opacity: 1;
+}
+.container .box .content h3
+{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.container .box .content h3
+{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+.container .box:nth-child(1) .icon{
+    background: #319635;
+}
+.container .box:nth-child(1){
+    background: #659669;
+}
+.container .box:nth-child(2) .icon{
+    background: #566405;
+}
+.container .box:nth-child(2){
+    background: #6c9e6e;
+}
+.container .box:nth-child(3) .icon{
+    background: #c99a1a;
+}
+.container .box:nth-child(3){
+    background: #cacc66;
+}
+.container .box:nth-child(4) .icon{
+    background: #c91a7a;
+}
+.container .box:nth-child(4){
+    background: #bd648e;
+}
+.container .box:nth-child(5) .icon{
+    background: #1a66c9;
+}
+.container .box:nth-child(5){
+    background: #667ecc;
+}
+.container .box:nth-child(6) .icon{
+    background: #c9601a;
+}
+.container .box:nth-child(6){
+    background: #cc9766;
+}

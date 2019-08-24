@@ -1,35 +1,66 @@
-
-<!DOCTYPE html>
 <html>
     <head>
-        <title>ASPIRANT</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="/css/style.css">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     </head>
-    
     <body>
-	
-        <header id="main-header">
             <div class="container">
-                <h1>ASPIRANT</h1>
-                <h2>Network controll</h2>
+                <h1>Users</h1>
+            <div class="box">
+                <div class="icon"><i class="fa fa-user" aria-hidden="true">
+                    </i></div> 
+                    <form action="/user_create" method="post"></form>
+                    <div class="content">
+                        <h3>User</h3>
+                        <%=results[0]
+                            %>
+                        </div>
+                    </div>
+             <div class="box">
+                    <div class="icon"><i class="fa fa-user" aria-hidden="true">
+                        </i></div>
+                        <div class="content">
+                            <h3>User</h3>
+                            <%=results[1]%>
+                        </div>
+                </div>
+        <div class="box">
+                <div class="icon"><i class="fa fa-user" aria-hidden="true">
+                    </i></div>
+                    <div class="content">
+                        <h3>User</h3>
+                        <%=results[2]%>
+                    </div>
             </div>
-        </header>
-        <nav id="navbar">
-            <div class="container">
-            <ul>
-		        <li><a href="#">Home</a></li>
-                <li><a href="#">Lab</a>
-                <ul>
-                    <li>
-                            <form action="/lab" method="get">
-                                <input type="submit" placeholder="Lab1">Lab 1
-                            </form>
-                    </li>
-                            </ul>
-                </li>
-	
-            </ul>
-            </div>
-        </nav>
+         <div class="container">
+             <div class="box">
+                 <div class="icon"><i class="fa fa-user" aria-hidden="true">
+                    </i></div> 
+                         <div class="content">
+                            <h3>User</h3>
+                            <%=results[3]%>
+                             </div>
+                            </div>
+                            <div class="container">
+         <div class="box">
+            <div class="icon"><i class="fa fa-user" aria-hidden="true">
+              </i></div> 
+                 <div class="content">
+                     <h3>User</h3>
+                     <%=results[4]%>
+                    </div>
+                    </div>
+        <div class="container">
+            <div class="box">
+                <div class="icon"><i class="fa fa-user" aria-hidden="true">
+                  </i></div> 
+                          <div class="content">
+                         <h3>User</h3>
+                         <%=results[5]%>
+                                 </div>
+                                </div>        
+            
+           
     </body>
 </html>

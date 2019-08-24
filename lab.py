@@ -13,9 +13,6 @@ output = net_connect.send_command('show run')
 res = output.index('interface')
 end = output.index('ip forward-protocol nd')
 ok =  output[res:end-3].split('!')
-for i in range(5):
-    print(ok[i])
-    json.dump(res, str(i), indent=4)
-# with open('./int.json', 'w') as f:
-#             print("Dumping {} movies".format(len(data)))
-#             json.dump(f)
+wr = open('./int.json','w')
+wr.write(json.dumps(ok))
+wr.close()

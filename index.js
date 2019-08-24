@@ -16,42 +16,41 @@ var options = {
 };
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/',(req,res)=>{
+// app.get('/',(req,res)=>{
     // PythonShell.run('script.py', options , async (err, results)=> {
     //     if (err) throw err;
     //     console.log(String(results));
     //     console.log('finished');
         // res.render('index.ejs');
-        test = fs.readFile('./int.json', "ascii" , async (err, data) => {
-            if (err) throw err
-            console.log(data)
-            return(data)
-        })        
-        console.log(test)
-        res.send(test)
+              
+        
     //   });
-})
+// })
 
-app.get('/lab',async (req,res)=>{
+app.get('/',async (req,res)=>{
     PythonShell.run('lab.py', options , async (err, results)=> {
         if (err) throw err;
-        console.log(String(results));
-        console.log('finished');
-        res.render('user.ejs',{results:String(results)});
-      });
+        console.log('finished'); 
+    });
+    test = fs.readFile('./int.json', "utf8" , async (err, data) => {
+        if (err) throw err
+        dat = JSON.parse(data)
+        console.log(dat)
+        res.render('index.ejs',{results:dat});
+    })
 })
 
-app.post('/dhcp',async (req,res)=>{
-    console.log(req.body.int)
-    opts = options.args.push(req.body.int)
-    PythonShell.run('dhcp.py', opts , async (err, results)=> {
-        if (err) throw err;
-        console.log(String(results));
-        console.log('finished');
-        res.redirect('/');
-      });
-    }
-)
+// app.post('/dhcp',async (req,res)=>{
+//     console.log(req.body.int)
+//     opts = options.args.push(req.body.int)
+//     PythonShell.run('dhcp.py', opts , async (err, results)=> {
+//         if (err) throw err;
+//         console.log(String(results));
+//         console.log('finished');
+//         res.redirect('/');
+//       });
+//     }
+// )
 // app.post('/showip',async (req,res)=>{
 //     console.log(req.body.int)
 //     opts = options.args.push(req.body.int)
