@@ -20,6 +20,6 @@ app.use(methodOverride("_method"));
 // app.use('/',routes);
 
 app.listen(port,()=>{
-    console.log("Server is created...\nGoto 127.0.0.1:3000");
+    console.log("Server is created...\nGoto 127.0.0.1:${port}");
 });
 
