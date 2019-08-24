@@ -26,7 +26,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/lab',async (req,res)=>{
-    PythonShell.run('script.py', options , async (err, results)=> {
+    PythonShell.run('lab.py', options , async (err, results)=> {
         if (err) throw err;
         console.log(String(results));
         console.log('finished');
