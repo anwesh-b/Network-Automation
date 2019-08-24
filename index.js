@@ -1,10 +1,11 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT||3000;
+const port = process.env.PORT||7000;
 app.set('view engine','ejs');
 app.use(express.static(__dirname+"/public"));
 const { PythonShell } = require('python-shell');
 
+app.use(express.json())
 var options = {
     mode: 'text',
     pythonPath: '/usr/bin/python', 
@@ -23,14 +24,15 @@ app.get('/',async (req,res)=>{
 })
 
 app.post('/dhcp',async (req,res)=>{
-    options.args.push(req.body.int)
-    // options.push({args: [String(req.body.inter)]})
-    PythonShell.run('dhcp.py', options , async (err, results)=> {
-        if (err) throw err;
-        console.log(String(results));
-        console.log('finished');
-        res.redirect('/');
-      });
+    console.log(req.body.int)
+    // options.args.push(req.body.name)
+    // // options.push({args: [String(req.body.inter)]})
+    // PythonShell.run('dhcp.py', options , async (err, results)=> {
+    //     if (err) throw err;
+    //     console.log(String(results));
+    //     console.log('finished');
+    //     res.redirect('/');
+    //   });
     }
 )
 
