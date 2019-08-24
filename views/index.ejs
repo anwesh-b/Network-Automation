@@ -1,62 +1,35 @@
-<% include partials/header.ejs %>
-<nav id="navbar">
-    <div class="container">
-    <ul>
-        <h1><%=results%></h1>
-        <br>
-        <form method="post" action="/dhcp">
-            <input type="text" placeholder="Write you interface" name="int">
-            <input type="submit" placeholder="Submit">
-        </form>
-        <br>
-        <form method="post" action="/showip">
-            <input type="text" placeholder="Write you interface" name="int">
-            <input type="submit" placeholder="Submit">
-        </form>
-        <li><a href="#">Computer 1</a>
-        <ul>
-            <label>
-            <li><a href="#">Ip address</a></li>
-            <li><a href="#">m2c address</a></li>
-            <li><a href="#">shut</a></li>
-            <li><a href="#">no shut</a></li>
-        </label>
-        </ul>
-        </li>
-        <li><a href="#">Computer 2</a>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ASPIRANT</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    
+    <body>
+	
+        <header id="main-header">
+            <div class="container">
+                <h1>ASPIRANT</h1>
+                <h2>Network controll</h2>
+            </div>
+        </header>
+        <nav id="navbar">
+            <div class="container">
             <ul>
-                    <li><a href="#">Ip address</a></li>
-                    <li><a href="#">mac address</a></li>
-                    <li><a href="#">shut</a></li>
-                    <li><a href="#">no shut</a></li>
-                </ul>
-        </li>
-        <li><a href="#">Computer 3</a>
-            <ul>
-                    <li><a href="#">Ip address</a></li>
-                    <li><a href="#">mac address</a></li>
-                    <li><a href="#">shut</a></li>
-                    <li><a href="#">no shut</a></li>
-                </ul>
-        </li>
-        <li><a href="#">Computer 4</a>
-            <ul>
-                    <li><a href="#">Ip address</a></li>
-                    <li><a href="#">mac address</a></li>
-                    <li><a href="#">shut</a></li>
-                    <li><a href="#">no shut</a></li>
-                </ul>
-        </li>
-        <li><a href="detail.html">Computer 5</a>
-            <ul>
-                    <li><a href="#">Ip address</a></li>
-                    <li><a href="#">mac address</a></li>
-                    <li><a href="#">shut</a></li>
-                    <li><a href="#">no shut</a></li>
-                </ul>
-        </li>
-    </form>
-    </ul>
-    </div>
-</nav>
-<% include partials/footer.ejs %>
+		        <li><a href="#">Home</a></li>
+                <li><a href="#">Lab</a>
+                <ul>
+                    <li>
+                            <form action="/lab" method="get">
+                                <input type="submit" placeholder="Lab1">Lab 1
+                            </form>
+                    </li>
+                            </ul>
+                </li>
+	
+            </ul>
+            </div>
+        </nav>
+    </body>
+</html>

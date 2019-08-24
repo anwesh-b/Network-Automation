@@ -16,12 +16,21 @@ var options = {
 };
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/',async (req,res)=>{
+app.get('/',(req,res)=>{
+    // PythonShell.run('script.py', options , async (err, results)=> {
+    //     if (err) throw err;
+    //     console.log(String(results));
+    //     console.log('finished');
+        res.render('index.ejs');
+    //   });
+})
+
+app.get('/lab',async (req,res)=>{
     PythonShell.run('script.py', options , async (err, results)=> {
         if (err) throw err;
         console.log(String(results));
         console.log('finished');
-        res.render('index.ejs',{results:String(results)});
+        res.render('user.ejs',{results:String(results)});
       });
 })
 
