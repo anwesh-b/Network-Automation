@@ -5,7 +5,7 @@ app.set('view engine','ejs');
 app.use(express.static(__dirname+"/public"));
 const { PythonShell } = require('python-shell');
 const bodyParser = require('body-parser');
-
+const fs = require('fs')
 app.use(express.json())
 var options = {
     mode: 'text',
@@ -21,7 +21,14 @@ app.get('/',(req,res)=>{
     //     if (err) throw err;
     //     console.log(String(results));
     //     console.log('finished');
-        res.render('index.ejs');
+        // res.render('index.ejs');
+        test = fs.readFile('./int.json', "ascii" , async (err, data) => {
+            if (err) throw err
+            console.log(data)
+            return(data)
+        })        
+        console.log(test)
+        res.send(test)
     //   });
 })
 
