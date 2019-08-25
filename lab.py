@@ -3,7 +3,8 @@ import json
 
 iosv_l2 = {
     'device_type': 'cisco_ios',
-    'ip': '192.168.122.127',
+    # 'ip': '192.168.122.127',
+    'ip': '10.0.0.1',
     'username': 'asian',
     'password': 'hack',
     'secret': 'cisco'

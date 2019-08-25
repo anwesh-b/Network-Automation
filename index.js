@@ -42,7 +42,19 @@ app.get('/',async (req,res)=>{
 
 app.post('/inter',async (req,res)=>{
     console.log(req.body.int)
-    opts = options.args.push(req.body.int)
+    opts = options.args.push(req.body.int,req.body.type)
+    PythonShell.run('dhcp.py', opts , async (err, results)=> {
+        if (err) throw err;
+        console.log(String(results));
+        console.log('finished');
+        res.redirect('/');
+      });
+    }
+)
+
+app.post('/acl',async (req,res)=>{
+    console.log(req.body.int)
+    opts = options.args.push(req.body.int,req.body.type)
     PythonShell.run('dhcp.py', opts , async (err, results)=> {
         if (err) throw err;
         console.log(String(results));
