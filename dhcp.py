@@ -12,6 +12,5 @@ net_connect = ConnectHandler(**iosv_l2)
 ok = net_connect.enable()
 cmds = ['conf t',
         'int '+ sys.argv[1],
-        'ip address 192.168.1.1 255.255.255.0',
-        'no sh']
+        sys.argv[2]]
 output = net_connect.send_config_set(cmds)
