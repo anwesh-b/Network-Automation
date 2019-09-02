@@ -5,126 +5,20 @@
     </head>
     <body>
             <div class="container">
-                <h1>Users </h1>
-            <div class="box">
-                <div class="icon">
-                    <i class="fa fa-user" aria-hidden="true"> </i></div> 
-                    <form action="/user_create" method="post"></form>
-                    <div class="content">
-                            <h3>User1</h3>
-                            Port Status : <%=results[0]%><br>
-                            Ip Address : <%=results[1]%>
-                            <br> <form action="/inter" method="POST">
-                                <input type="hidden" name="int" value="fa0/0">
-                                <input type="hidden" name="type" value="no sh">
-                                <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                            </form> 
-                            <form action="/inter" method="POST">
-                                <input type="hidden" name="int" value="fa0/0">
-                                <input type="hidden" name="type" value="sh">
-                                <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                            </form>
-                        </p>
-                        </div>
-                    </div>
-             <div class="box">
-                    <div class="icon"><i class="fa fa-user" aria-hidden="true">
-                        </i></div>
-                        <div class="content">
-                                <h3>User2</h3>
-                                Port Status : <%=results[2]%><br>
-                                Ip Address : <%=results[3]%>
-                                <br><br> <form action="/inter" method="POST">
-                                    <input type="hidden" name="int" value="fa1/0">
-                                    <input type="hidden" name="type" value="no sh">
-                                    <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                                </form> 
-                                <form action="/inter" method="POST">
-                                    <input type="hidden" name="int" value="fa1/0">
-                                    <input type="hidden" name="type" value="sh">
-                                    <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                                </form></p>
-                        </div>
-                </div>
-        <div class="box">
-                <div class="icon"><i class="fa fa-user" aria-hidden="true">
-                    </i></div>
-                    <div class="content">
-                            <h3>User3</h3>
-                            Port Status : <%=results[4]%><br>
-                            Ip Address : <%=results[5]%>
-                            <br><br> <form action="/inter" method="POST">
-                                <input type="hidden" name="int" value="fa2/0">
-                                <input type="hidden" name="type" value="no sh">
-                                <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                            </form> 
-                            <form action="/inter" method="POST">
-                                <input type="hidden" name="int" value="fa2/0">
-                                <input type="hidden" name="type" value="sh">
-                                <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                            </form></p>
-                    </div>
-            </div>
-
-            <div class="box">
-                    <div class="icon"><i class="fa fa-user" aria-hidden="true">
-                        </i></div>
-                        <div class="content">
-                                <h3>User4</h3>
-                                Port Status : <%=results[6]%><br>
-                                Ip Address : <%=results[7]%>
-                                <br> <form action="/inter" method="POST">
-                                    <input type="hidden" name="int" value="fa3/0">
-                                    <input type="hidden" name="type" value="no sh">
-                                    <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                                </form> 
-                                <form action="/inter" method="POST">
-                                    <input type="hidden" name="int" value="fa3/0">
-                                    <input type="hidden" name="type" value="sh">
-                                    <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                                </form></p>
-                        </div>
-                </div>
-                <div class="box">
-                        <div class="icon"><i class="fa fa-user" aria-hidden="true">
-                            </i></div>
-                            <div class="content">
-                                    <h3>User5</h3>
-                                    Port Status : <%=results[8]%><br>
-                                    Ip Address : <%=results[9]%>
-                                    <<br> <form action="/inter" method="POST">
-                                        <input type="hidden" name="int" value="fa4/0">
-                                        <input type="hidden" name="type" value="no sh">
-                                        <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                                    </form> 
-                                    <form action="/inter" method="POST">
-                                        <input type="hidden" name="int" value="fa4/0">
-                                        <input type="hidden" name="type" value="sh">
-                                        <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                                    </form></p>
-                            </div>
-                    </div>
-
-                    <div class="box">
-                            <div class="icon"><i class="fa fa-user" aria-hidden="true">
-                                </i></div>
-                                <div class="content">
-                                        <h3>User6</h3>
-                                        Port Status : <%=results[10]%><br>
-                                        Ip Address : <%=results[11]%>
-                                        <br> <br> <form action="/inter" method="POST">
-                                            <input type="hidden" name="int" value="fa5/0">
-                                            <input type="hidden" name="type" value="no sh">
-                                            <input type="submit" value="No ShutDown" onclick="return confirmDelete()">
-                                        </form> 
-                                        <form action="/inter" method="POST">
-                                            <input type="hidden" name="int" value="fa5/0">
-                                            <input type="hidden" name="type" value="sh">
-                                            <input type="submit" value="ShutDown" onclick="return confirmDelete()">
-                                        </form></p>
-                        </div>
-            </div> 
-        </div>   
+                <h1>Interfaces </h1>
+                <table style="width:100%">
+                <%for(var i=0;i<results.length;i++)
+                  { {%>
+                    <tr>
+                        <th><%=results[i]%></th>
+                        <th><%=results[i+1]%></th>
+                        <% }
+                        i++
+                        { %>
+                    </tr>
+                <% }} %>
+                </table>
+                 
         <script>
             function confirmDelete(){
                 return confirm("Are you sure ?");
